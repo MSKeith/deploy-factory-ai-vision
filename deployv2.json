@@ -14,11 +14,12 @@
       "allowedValues": [
         "F1",
         "S1",
-        "S2"
+        "S2",
+        "s3"
       ],
-      "defaultValue": "F1",
+      "defaultValue": "S1",
       "metadata": {
-        "description": "One of the supported SKUs: F1, S1 or S2"
+        "description": "One of the supported SKUs: F1, S1, S2 or S3"
       }
     },
     "capacityUnits": {
