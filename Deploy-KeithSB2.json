@@ -2,35 +2,29 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "IoT_Hub_Name": {
+    "hubName": {
       "type": "string"
-    },
-    "Location": {
-        "type": "string"
-    },
-    "IoT_Hub_Size": {
-        "type": "string"
     }
   },
   "resources": [
   {
     "apiVersion": "2016-02-03",
     "type": "Microsoft.Devices/IotHubs",
-    "name": "[parameters('IoT_Hub_Name')]",
-    "location": "[parameters('Location')]",
+    "name": "[parameters('hubName')]",
+    "location": "East US",
     "sku": {
-      "name": "[parameters('IoT_Hub_Size')]",
+      "name": "S1",
       "tier": "Standard",
       "capacity": 1
     },
     "properties": {
-      "location": "[parameters('Location')]"
+      "location": "East US"
     }
   }
   ],
   "outputs": {
     "hubKeys": {
-      "value": "[listKeys(resourceId('Microsoft.Devices/IotHubs', parameters('IoT_Hub_Name')), '2016-02-03')]",
+      "value": "[listKeys(resourceId('Microsoft.Devices/IotHubs', parameters('hubName')), '2016-02-03')]",
       "type": "object"
     }
   }
