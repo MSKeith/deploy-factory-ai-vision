@@ -39,7 +39,7 @@
         "description": "Retention time in days for device-to-cloud messages."
       }
     },
-    "d2cPartitionCount": {
+    "PartitionCount": {
       "type": "int",
       "minValue": 2,
       "defaultValue": 4,
@@ -108,7 +108,7 @@
         "eventHubEndpoints": {
           "events": {
             "retentionTimeInDays": "[parameters('d2cMessageRetentionInDaysPeriod')]",
-            "partitionCount": "[parameters('d2cPartitionCount')]"
+            "partitionCount": "[parameters('PartitionCount')]"
           }
         },
         "cloudToDevice": {
