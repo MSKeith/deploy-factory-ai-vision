@@ -86,7 +86,7 @@
         "description": "Lock duration in ISO_8601 format for service-bound feedback messages. The value can range from PT5S to PT300S (or any other format as per ISO_8601 standards for duration)."
       }
     },
-    "d2cConsumerGroupName": {
+    "ConsumerGroupName": {
       "type": "string",
       "minLength": 3,
       "defaultValue": "cg1",
@@ -133,7 +133,7 @@
       "dependsOn": [
         "[concat('Microsoft.Devices/iothubs/', parameters('iotHubName'))]"
       ],
-      "name": "[concat(parameters('iotHubName'), '/events/',parameters('d2cConsumerGroupName'))]",
+      "name": "[concat(parameters('iotHubName'), '/events/',parameters('ConsumerGroupName'))]",
       "type": "Microsoft.Devices/iotHubs/eventhubEndpoints/ConsumerGroups"
     }
   ],
